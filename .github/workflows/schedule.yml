@@ -32,7 +32,7 @@ jobs:
       # 4) Run your three scripts in sequence
       - name: Run all scripts
         run: |
-          python script1.py
-          python script2.py
+          delete_all_sub_calendars.py
+          create_sub_calendar_structure.py
           push_latest_sb_data_to_teamup.py
 
