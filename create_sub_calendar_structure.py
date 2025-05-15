@@ -7,6 +7,8 @@ import csv
 load_dotenv("c:/Users/Jack.Andrew/Downloads/teamup/.env", override=True)
 API_TOKEN     = os.getenv("TEAMUP_TOKEN")         # ← your calendar-level key
 CALENDAR_KEY  = os.getenv("TEAMUP_CALENDAR_KEY")  # ← e.g. "oahota"
+TEAM_EMAIL = os.getenv("TEAMUP_EMAIL")  
+TEAM_PASSWORD = os.getenv("TEAMUP_PASSWORD")
 
 # ─── 2) Authenticate once to get your user token ─────────────────────────────
 auth_resp = requests.post(

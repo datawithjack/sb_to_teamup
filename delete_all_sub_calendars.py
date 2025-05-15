@@ -8,6 +8,8 @@ from utils.teamup_functions import delete_subcalendar, list_all_subcalendars
 load_dotenv(override=True)
 API_TOKEN    = os.getenv("TEAMUP_TOKEN")         # ← calendar API key
 CALENDAR_KEY = os.getenv("TEAMUP_CALENDAR_KEY")  # ← e.g. "oahota"
+TEAM_EMAIL = os.getenv("TEAMUP_EMAIL")  
+TEAM_PASSWORD = os.getenv("TEAMUP_PASSWORD")
 
 # 2) log in to get your user token
 auth_resp = requests.post(
@@ -20,8 +22,8 @@ auth_resp = requests.post(
     json={
         "app_name":  "Aspire Sports Department Calendar",
         "device_id": "Jacks Laptop",
-        "email":     "Alessandra.moretti@aspire.qa",
-        "password":  "Aspire2025"
+        "email":     TEAM_EMAIL,
+        "password": TEAM_PASSWORD
     }
 )
 auth_resp.raise_for_status()

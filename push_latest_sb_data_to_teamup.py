@@ -29,8 +29,13 @@ start_date = datetime(2025, 5, 11).date()
 end_date   = datetime(2025, 12, 31).date()
 
 # ─── Fetch & parse ──────────────────────────────────────────────────────────
+load_dotenv(override=True)
+SB_USERNAME   = os.getenv("SB_USERNAME")     
+SB_PASSWORD = os.getenv("SB_PASSWORD")
+
 session = requests.Session()
-session.auth = ("sb_sap.etl", "A1s2p3!re")
+session.auth = (SB_USERNAME, SB_PASSWORD)
+
 url = (
     "https://aspire.smartabase.com/aspireacademy/live"
     "?report=PYTHON6_TRAINING_PLAN&updategroup=true"
@@ -102,7 +107,9 @@ df['Venue'] = df['Venue'].apply(lambda v: v if v in venue_list else '_OTHER')
 # Get Authorization token ──────────────────────────────────────────────────────────
 load_dotenv(override=True)
 API_TOKEN    = os.getenv("TEAMUP_TOKEN")         # ← calendar API key
-CALENDAR_KEY = os.getenv("TEAMUP_CALENDAR_KEY")  # ← e.g. "oahota"
+CALENDAR_KEY = os.getenv("TEAMUP_CALENDAR_KEY") # ← e.g. "oahota"
+TEAM_EMAIL = os.getenv("TEAMUP_EMAIL")  
+TEAM_PASSWORD = os.getenv("TEAMUP_PASSWORD")
 
 # 2) log in to get your user token
 auth_resp = requests.post(
@@ -115,8 +122,8 @@ auth_resp = requests.post(
     json={
         "app_name":  "My awesome new app",
         "device_id": "Jacks Laptop",
-        "email":     "Alessandra.moretti@aspire.qa",
-        "password":  "Aspire2025"
+        "email":     TEAM_EMAIL,
+        "password": TEAM_PASSWORD
     }
 )
 auth_resp.raise_for_status()
