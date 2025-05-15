@@ -1,0 +1,55 @@
+﻿Calendar Name,Color Id,Allow Overlap
+Sport > AA > Athletics > Development > Development 1,19,1
+Sport > AA > Athletics > Development > Development 2,24,1
+Sport > AA > Athletics > Development > Development 3,4,1
+Sport > AA > Athletics > Endurance > Endurance_Development,21,1
+Sport > AA > Athletics > Endurance > Endurance_Senior,7,1
+Sport > AA > Athletics > Girls Programe > Cadet_U16,10,1
+Sport > AA > Athletics > Girls Programe > Kids,23,1
+Sport > AA > Athletics > Girls Programe > Mini Cadet_U14,2,1
+Sport > AA > Athletics > Girls Programe > Youth_U18,1,1
+Sport > AA > Athletics > Jumps > Jumps Martin,15,1
+Sport > AA > Athletics > Jumps > Jumps_ElWalid,16,1
+Sport > AA > Athletics > Jumps > Jumps_Jaco,13,1
+Sport > AA > Athletics > Jumps > Jumps_Ross Jeffs,5,1
+Sport > AA > Athletics > Sprints > Sprints_Hamdi,14,1
+Sport > AA > Athletics > Sprints > Sprints_Lee,18,1
+Sport > AA > Athletics > Throws > Senior Performance Throws,6,1
+Sport > AA > Fencing,3,1
+Sport > AA > Squash,12,1
+Sport > AA > Padel,22,1
+Sport > AA > Table Tennis,4,1
+Sport > AA > Swimming,24,1
+Sport > AA > Pre Academy > Pre Academy Fencing,9,1
+Sport > AA > Pre Academy > Padel > Explorers +,11,1
+Sport > AA > Pre Academy > Padel > Explorers,8,1
+Sport > AA > Pre Academy > Padel > Starters,15,1
+Sport > AA > Pre Academy > Padel > Girls,16,1
+Sport > AA > Pre Academy > Pre Academy Squash Girls,20,1
+Sport > AA > Pre Academy > Pre Academy Athletics Boys,17,1
+Sport > QAF > Sprints > Sprints_Kurt,16,1
+Sport > QAF > Sprints > Sprints_Steve,5,1
+Venue > Basement Track,17,1
+Venue > Blue Ice,14,1
+Venue > Fencing Hall,18,1
+Venue > Gym A,6,1
+Venue > Gym B,3,1
+Venue > Gym C,9,1
+Venue > Indoor Track,22,1
+Venue > Khalifa Stadium,11,1
+Venue > MPH 1,12,1
+Venue > Outdoor Throws,20,1
+Venue > Outdoor Track,19,1
+Venue > PadelIN,24,1
+Venue > Physiology Lab,4,1
+Venue > Sand Court,7,1
+Venue > Sport Psychology Suite Common Area,10,1
+Venue > Squash Courts,23,1
+Venue > Swimming Pool,2,1
+Venue > Table Tennis Hall,1,1
+Venue > MPH 2,16,1
+Venue > Aspire Park,13,1
+Venue > Federation,5,1
+Venue > FPC Pitch,17,1
+Venue > _MISSING,10,1
+Venue > _OTHER,23,1
