@@ -1,12 +1,10 @@
 # .github/workflows/schedule.yml
-
 name: Scheduled TeamUp Scripts
 
 on:
   push:
     branches: [ main ]
   schedule:
-    # daily at 07:00 Doha (04:00 UTC)
     - cron: '0 4 * * *'
   workflow_dispatch:
 
@@ -14,13 +12,13 @@ jobs:
   run-scripts:
     runs-on: ubuntu-latest
     env:
-      TEAMUP_BASE_URL:      ${{ secrets.TEAMUP_BASE_URL }}
-      TEAMUP_CALENDAR_KEY:  ${{ secrets.TEAMUP_CALENDAR_KEY }}
-      TEAMUP_TOKEN:         ${{ secrets.TEAMUP_TOKEN }}
-      TEAMUP_EMAIL:         ${{ secrets.TEAMUP_EMAIL }}
-      TEAMUP_PASSWORD:      ${{ secrets.TEAMUP_PASSWORD }}
-      SB_USERNAME:          ${{ secrets.SB_USERNAME }}
-      SB_PASSWORD:          ${{ secrets.SB_PASSWORD }}
+      TEAMUP_BASE_URL:    "${{ secrets.TEAMUP_BASE_URL }}"
+      TEAMUP_CALENDAR_KEY: "${{ secrets.TEAMUP_CALENDAR_KEY }}"
+      TEAMUP_TOKEN:       "${{ secrets.TEAMUP_TOKEN }}"
+      TEAMUP_EMAIL:       "${{ secrets.TEAMUP_EMAIL }}"
+      TEAMUP_PASSWORD:    "${{ secrets.TEAMUP_PASSWORD }}"
+      SB_USERNAME:        "${{ secrets.SB_USERNAME }}"
+      SB_PASSWORD:        "${{ secrets.SB_PASSWORD }}"
 
     steps:
       - uses: actions/checkout@v3
