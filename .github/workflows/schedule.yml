@@ -1,47 +1,43 @@
-# File: .github/workflows/schedule.yml
+# .github/workflows/schedule.yml
 
 name: Scheduled TeamUp Scripts
 
-# When to run:
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   schedule:
-    # daily at 07:00 Doha time
+    # daily at 07:00 Doha (04:00 UTC)
     - cron: '0 4 * * *'
+  workflow_dispatch:
 
 jobs:
   run-scripts:
     runs-on: ubuntu-latest
-
     env:
-      TEAMUP_BASE_URL: ${{ secrets.TEAMUP_BASE_URL }}
-      TEAMUP_CALENDAR_KEY: ${{ secrets.TEAMUP_CALENDAR_KEY }}
-      TEAMUP_TOKEN: ${{ secrets.TEAMUP_TOKEN }}
-      TEAMUP_EMAIL: ${{ secrets.TEAMUP_EMAIL }}
-      TEAMUP_PASSWORD: ${{ secrets.TEAMUP_PASSWORD }}
-      SB_USERNAME: ${{ secrets.SB_USERNAME }}
-      SB_PASSWORD: ${{ secrets.SB_PASSWORD }}
+      TEAMUP_BASE_URL:    ${{ secrets.TEAMUP_BASE_URL }}
+      TEAMUP_CALENDAR_KEY:${{ secrets.TEAMUP_CALENDAR_KEY }}
+      TEAMUP_TOKEN:       ${{ secrets.TEAMUP_TOKEN }}
+      TEAMUP_EMAIL:       ${{ secrets.TEAMUP_EMAIL }}
+      TEAMUP_PASSWORD:    ${{ secrets.TEAMUP_PASSWORD }}
+      SB_USERNAME:        ${{ secrets.SB_USERNAME }}
+      SB_PASSWORD:        ${{ secrets.SB_PASSWORD }}
 
     steps:
-      # 1) Check out your code
       - uses: actions/checkout@v3
 
-      # 2) Set up Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      # 3) Install your requirements
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # 4) Run your three scripts in sequence
-      - name: Run all scripts
-        run: |
-          delete_all_sub_calendars.py
-          create_sub_calendar_structure.py
-          push_latest_sb_data_to_teamup.py
+      - name: Delete all sub-calendars
+        run: python delete_all_sub_calendars.py
 
+      - name: Create sub-calendar structure
+        run: python create_sub_calendar_structure.py
+
+      - name: Push latest SB data to TeamUp
+        run: python push_latest_sb_data_to_teamup.py
