@@ -181,11 +181,11 @@ for _, row in df.iterrows():
     }
     tg_out.append(rec)
 
-    # write out in the same shape as converted.json
-    with open("NEW_Converted_from_csv.json", "w", encoding="utf-8") as f:
-        json.dump(tg_out, f, indent=4, ensure_ascii=False)
+    # # write out in the same shape as converted.json
+    # with open("NEW_Converted_from_csv.json", "w", encoding="utf-8") as f:
+    #     json.dump(tg_out, f, indent=4, ensure_ascii=False)
 
-    print(f"Converted {len(tg_out)} events → converted_from_csv.json")
+    # print(f"Converted {len(tg_out)} events → converted_from_csv.json")
 
 
 # ─── PUSH TG EVENTS TO CALENDAR ─────────────────────────────
