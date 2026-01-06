@@ -42,11 +42,11 @@ HEADERS  = {
 if __name__ == "__main__":
     subcal_data = list_all_subcalendars(BASE_URL, CALENDAR_KEY, HEADERS)
     sub_calendar_ids = [item["id"] for item in subcal_data]
-    filtered_sub_calendar_ids = [id for id in sub_calendar_ids if id != 14217582]
+    filtered_sub_calendar_ids = [id for id in sub_calendar_ids if id not in [14217582, 15155825]]
 
     # Exclude the last calendar from deletion
     ids_to_delete = filtered_sub_calendar_ids
-    print("Will delete these IDs (keeping id: 14217582):", ids_to_delete) #barney calendar is kept
+    print("Will delete these IDs (keeping id: 15155825, 14217582):", ids_to_delete) #barney calendar is kept
 
     for sub_id in ids_to_delete:
         delete_subcalendar(BASE_URL, CALENDAR_KEY, HEADERS, sub_id)
