@@ -42,7 +42,7 @@ HEADERS  = {
 if __name__ == "__main__":
     subcal_data = list_all_subcalendars(BASE_URL, CALENDAR_KEY, HEADERS)
     sub_calendar_ids = [item["id"] for item in subcal_data]
-    filtered_sub_calendar_ids = [id for id in sub_calendar_ids if id not in [14217582, 15155825]]
+    filtered_sub_calendar_ids = [id for id in sub_calendar_ids if id not in [14217582, 15155825,15166082]]
 
     # Exclude the last calendar from deletion
     ids_to_delete = filtered_sub_calendar_ids

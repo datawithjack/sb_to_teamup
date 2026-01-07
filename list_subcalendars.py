@@ -36,7 +36,7 @@ HEADERS = {
 
 
 def list_all_subcalendars(BASE_URL, CALENDAR_KEY, HEADERS):
-    url = f"{BASE_URL}/{CALENDAR_KEY}/subcalendars"
+    url = f"{BASE_URL}{CALENDAR_KEY}/subcalendars"
     resp = requests.get(url, headers=HEADERS)
     resp.raise_for_status()
 
@@ -52,7 +52,7 @@ def list_all_subcalendars(BASE_URL, CALENDAR_KEY, HEADERS):
     return result
 
 if __name__ == "__main__":
-    subcalendars = list_all_subcalendars()
+    subcalendars = list_all_subcalendars(BASE_URL, CALENDAR_KEY, HEADERS)
     
     for sc in subcalendars:
         print(sc)
